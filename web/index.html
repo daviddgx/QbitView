@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QbitView - Monitoreo Humo/Fuego</title>
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>QbitView Dashboard</h1>
+      <button id="refresh">Actualizar</button>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Cámaras</h2>
+        <select id="camera-select"></select>
+        <button id="detect">Detectar ahora</button>
+        <div class="stream-wrap">
+          <img id="stream" alt="Vista de cámara" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Eventos detectados</h2>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Tipo</th><th>Severidad</th><th>Confianza</th><th>Fecha</th><th>Detalle</th></tr>
+          </thead>
+          <tbody id="events-body"></tbody>
+        </table>
+      </section>
+
+      <section class="panel" id="detail-panel">
+        <h2>Detalle del evento</h2>
+        <pre id="event-detail">Selecciona un evento...</pre>
+        <img id="event-image" alt="Foto del evento" />
+      </section>
+    </main>
+
+    <script src="/web/app.js"></script>
+  </body>
+</html>
