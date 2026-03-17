@@ -40,6 +40,8 @@ class Event(Base):
     severity: Mapped[Severity] = mapped_column(SqlEnum(Severity), nullable=False)
     confidence: Mapped[float] = mapped_column(Numeric(5, 4), nullable=False)
     message: Mapped[str] = mapped_column(String(255), nullable=False)
+    detector_source: Mapped[str] = mapped_column(String(40), default="unknown", nullable=False)
+    snapshot_path: Mapped[str | None] = mapped_column(String(255), nullable=True)
     frame_timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 

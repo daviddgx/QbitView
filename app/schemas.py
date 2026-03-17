@@ -30,6 +30,9 @@ class EventOut(BaseModel):
     severity: Severity
     confidence: float
     message: str
+    detector_source: str
+    snapshot_path: str | None
+    snapshot_url: str | None = None
     frame_timestamp: datetime
 
     class Config:
